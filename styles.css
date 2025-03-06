@@ -1,38 +1,37 @@
-/* Prevent scrolling and ensure full-page coverage */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden; /* Disable scrolling */
+/* Global styles - applies to all devices */
+body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  margin: 0;
   background-color: #e5acf2;
   font-family: 'Arial', sans-serif;
   flex-direction: column;
-}
-
-/* Center content properly */
-.container {
   text-align: center;
-  width: 100%;
 }
 
-/* Resize and position the buttons */
+/* Make sure content is properly centered */
+.container {
+  width: 90%;
+  max-width: 600px; /* Limits width on large screens */
+}
+
+/* Responsive button layout */
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap; /* Allows buttons to stack on small screens */
+  gap: 15px;
   margin-top: 20px;
 }
 
-/* Style buttons */
+/* Buttons styling */
 .yes-button, .no-button {
-  font-size: 1.5em;
-  padding: 15px 30px;
+  font-size: 1.2em; /* Adjusted for mobile */
+  padding: 12px 24px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
 }
@@ -47,15 +46,41 @@ html, body {
   color: white;
 }
 
-/* Button hover effect */
-.yes-button:hover, .no-button:hover {
-  transform: scale(1.1);
-}
-
-/* GIF container styling */
+/* Make GIF responsive */
 .gif_container img {
-  max-width: 80%;
+  max-width: 90%;
   height: auto;
   border-radius: 10px;
   margin-top: 20px;
+}
+
+/* ---- MEDIA QUERIES FOR MOBILE ---- */
+
+/* Adjustments for screens smaller than 600px (Mobile) */
+@media screen and (max-width: 600px) {
+  h1 {
+      font-size: 2em; /* Reduce text size for small screens */
+  }
+
+  .buttons {
+      flex-direction: column; /* Stack buttons vertically */
+      align-items: center;
+  }
+
+  .yes-button, .no-button {
+      width: 80%; /* Make buttons wider */
+      font-size: 1.5em;
+  }
+}
+
+/* Adjustments for ultra-small screens (less than 400px) */
+@media screen and (max-width: 400px) {
+  h1 {
+      font-size: 1.8em; /* Further reduce text size */
+  }
+
+  .yes-button, .no-button {
+      width: 90%;
+      font-size: 1.3em;
+  }
 }
