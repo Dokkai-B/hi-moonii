@@ -1,51 +1,61 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #e5acf2;
-    font-family: 'Arial', sans-serif;
-    flex-direction: column;
-  }
-  
-  .container {
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 2.5em;
-    color: #dd474d;
-  }
-  
-  .buttons {
-    margin-top: 20px;
-  }
-  
-  .yes-button {
-    font-size: 1.5em;
-    padding: 10px 20px;
-    margin-right: 10px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .no-button {
-    font-size: 1.5em;
-    padding: 10px 20px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .gif_container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 20px;
-  }
+/* Prevent scrolling and ensure full-page coverage */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* Disable scrolling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5acf2;
+  font-family: 'Arial', sans-serif;
+  flex-direction: column;
+}
+
+/* Center content properly */
+.container {
+  text-align: center;
+  width: 100%;
+}
+
+/* Resize and position the buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Style buttons */
+.yes-button, .no-button {
+  font-size: 1.5em;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.yes-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.no-button {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Button hover effect */
+.yes-button:hover, .no-button:hover {
+  transform: scale(1.1);
+}
+
+/* GIF container styling */
+.gif_container img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+}
